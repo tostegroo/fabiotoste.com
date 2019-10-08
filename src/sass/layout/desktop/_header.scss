@@ -1,0 +1,77 @@
+#header{
+	.logo{
+		&:hover{
+			.logo-text{
+				@include scale(1);
+				@include opacity(0.8);
+				@include textGlitch('logotext', 56, #fff, #000, $menuOver, $menuOver, 300, 60);
+			}
+
+			&:before{
+				@include opacity(1);
+				@include scale(1.15);
+			}
+
+			svg{
+				@include scale(0.75);
+			}
+
+			#logo-svg{
+				fill: $black;
+			}
+		}
+	}
+	.menu{
+		.menu-item{
+			&:hover{
+				@include textGlitch('menu', 20, $menuColor, $menubg, $menuOver, $menuOver, 300, 40);
+			}
+		}
+	}
+
+	.home-share{
+		.social-item-home{
+			&:hover{
+				&:before, &:after{
+					display: block;
+				}
+				span{
+					color: $turquoise;
+				}
+				@include textGlitch('smenu', 18, $turquoise, $black, $fontFooter, $fontFooter, 60, 50);
+			}
+		}
+	}
+
+	&.small{
+		.logo{
+			&:hover{
+				.logo-text{
+					display: none;
+				}
+				#logo-svg{
+					fill: $black;
+				}
+			}
+		}
+		.menu{
+			.menu-item{
+				&:hover{
+					@include textGlitch('menu', 18, $menuSmall, $menuSmallbg, $menuOver, $menuOver, 300, 40);
+				}
+			}
+		}
+		.home-share{
+			.social-item-home{
+				&:hover{
+					&:before, &:after{
+						display: none;
+					}
+					span{
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}

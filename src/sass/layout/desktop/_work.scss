@@ -1,0 +1,47 @@
+#c-work{
+	.gallery{
+		.gallery-item{
+			&.hover:hover{
+				&.work{
+					@include translateZ(30px);
+					z-index: 400;
+
+					&:after{
+						@include opacity(0);
+					}
+
+					&:before{
+						@include opacity(0);
+					}
+				}
+			}
+		}
+	}
+}
+
+#work-single{
+	.single-nav{
+		&:hover{
+			p{
+				color: $turquoise;
+			}
+
+			&:after{
+				width: 80%;
+				border-color: $turquoise;
+			}	
+
+			&.next{
+				&:after{
+					left: -1px;
+				}
+			}
+
+			&.prev{
+				&:after{
+					left: 20%;
+				}
+			}
+		}
+	}
+}

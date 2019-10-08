@@ -1,0 +1,336 @@
+#c-about{
+	position: fixed;
+	top:0px;
+	left:100%;
+	width: calc(100vw - 80px);
+	height: 100%;
+	background-color: $ab_background;
+	z-index: 280;
+	color: $white;
+
+	#about-close{
+		position: absolute;
+		float: left;
+		width: 40px;
+		height: 40px;
+		top: 20px;
+		left: -60px;
+		z-index: 280;
+		@include transform-origin(50%, 50%);
+
+		&:before{
+			content: "";
+    		position: absolute;
+			top: 10px;
+			left: 0px;
+			width: 100%;
+			border-bottom: 1px solid #fff;
+			@include transform-origin(50%, 50%);
+			@include transition-timing-function(ease-in-out);
+			@include transition-duration(0.3s);
+    	}
+
+    	&:after{
+			content: "";
+    		position: absolute;
+			top: 30px;
+			left: 0px;
+			width: 100%;
+			border-bottom: 1px solid #fff;
+			@include transform-origin(50%, 50%);
+			@include transition-timing-function(ease-in-out);
+			@include transition-duration(0.3s);
+    	}
+
+    	&.open{
+    		cursor: pointer;
+    		
+			&:before{
+				top: 20px;
+				@include transform(rotate(45deg));
+	    	}
+
+	    	&:after{
+	    		top: 20px;
+				@include transform(rotate(-45deg));
+	    	}
+    	}
+	}
+
+	.about-container{
+		position: absolute;
+		top:0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 281;
+		background-color: $ab_background;
+
+		.about-background{
+			position: absolute;
+			top:0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 281;
+		}
+
+		.about-scroll{
+			cursor: pointer;
+			position: absolute;
+			left:50%;
+			margin-left: -11px;
+			bottom: 50px;
+			width: 26px;
+			height: 30px;
+			@include opacity(0.8);
+			@include transition-timing-function(cubic-bezier(.88,.03,.37,.97));
+			@include transition-duration(0.4s);
+			color: $white;
+			z-index: 284;
+			
+			&.close{
+				height: 0px;
+
+				p{
+					@include opacity(0);
+				}
+
+				span{
+					@include opacity(0);
+				}
+			}
+
+			&:before{
+				content: "";
+	    		position: absolute;
+				top: 0;
+				width: 1px;
+				height: 100%;
+				left: 50%;
+				background-color: $white;
+			}
+
+			p{
+				position: absolute;
+				left: 50%;
+				margin-left: -50px;
+				text-align: center;
+				width: 100px;
+				top:-20px;
+				height: 12px;
+				font-size: 14px;
+				@include transition-timing-function(ease);
+				@include transition-duration(0.4s);
+			}
+
+			span{
+				position: absolute;
+				text-align: center;
+				width: 103%;
+				font-size: 15px;
+				bottom: 3px;
+				@include transition-timing-function(ease);
+				@include transition-duration(0.4s);
+
+				&:before{
+					content: "";
+		    		position: absolute;
+		    		top:0px;
+		    		left: 5px;
+					width: 10px;
+					border-bottom: 1px solid $white;
+					@include transform-origin(0%, 50%);
+					@include transform(rotate(30deg));
+				}
+				&:after{
+					content: "";
+		    		position: absolute;
+		    		top:0px;
+		    		right: 5px;
+					width: 10px;
+					border-bottom: 1px solid $white;
+					@include transform-origin(100%, 50%);
+					@include transform(rotate(-30deg));
+				}
+			}
+		}
+
+		.switchButton{
+			cursor: pointer;
+			position: absolute;
+			right: 60px;
+			bottom: 50px;
+			width: 30px;
+			height: 45px;
+			border: 1px solid $white;
+			@include border-radius(3px);
+			z-index: 283;
+
+			&:before{
+				content: "";
+	    		position: absolute;
+				top: 12px;
+				width: 10px;
+				height: 20px;
+				left: 50%;
+				margin-left: -5px;
+				border: 1px solid $white;
+				@include border-radius(2px);
+			}
+
+			&:after{
+				content: "";
+	    		position: absolute;
+				top: 13px;
+				width: 8px;
+				height: 10px;
+				left: 50%;
+				margin-left: -4px;
+				background-color: $switchButton;
+				@include border-radius(1px);
+				@include transition-timing-function(cubic-bezier(.88,.03,.37,.97));
+				@include transition-duration(0.2s);
+			}
+
+			&.off{
+				&:after{
+					top: 21px;
+				}
+			}
+		}
+
+		.title{
+			position: absolute;
+			left: 80px;
+			bottom: 50px;
+			font-size: 5.8vw;
+			line-height: 4.7vw;
+			@include fontLight;
+			color: $white;
+			clear: both;
+			text-transform: uppercase;
+			@include transform-origin(0%, 100%);
+			z-index: 281;
+
+			strong{
+				@include fontBold;
+				font-size: 4.7vw;
+				line-height: 3.5vw;
+				margin-left: 0.2vw;
+			}
+		}
+
+		.about-content{
+			@include rel;
+			width: 100%;
+			height: 100%;
+			z-index: 282;
+
+			.content{
+				@include rel;
+				margin-top: 100vh;
+				@include fontLight;
+				font-size: 16px;
+				line-height: 24px;
+				width: 75vw;
+				min-width: 780px;
+				clear: both;
+				
+				.about-section{
+					@include rel;
+					width: 100%;
+					padding: 60px 100px 60px 26vw;
+					color: $white;
+					overflow: hidden;
+
+					.title{
+						bottom: auto;
+						top:0px;
+						clear: both;
+					}
+					
+					&:first-child{
+						padding-top: 80px;
+					}
+
+					&:last-child{
+						padding-bottom: 120px;
+					}
+				}
+
+				.subtitle{
+					@include fontText;
+					font-size: 40px;
+					line-height: 36px;
+					margin-bottom: 26px;
+					clear: both;
+				}
+
+				.litletitle{
+					@include fontText;
+					font-size: 26px;
+					line-height: 26px;
+					margin-top: 35px;
+					margin-bottom: 20px;
+					clear: both;
+				}
+
+				p{
+					margin: 10px 0;
+					clear: both;
+				}
+
+				ul{
+					position: relative;
+					float: left;
+					margin-top: 10px;
+					margin-bottom: 30px;
+					clear: both;
+
+					li{
+						position: relative;
+					    float: left;
+					    padding: 4px 33px 4px 7px;
+					    margin-bottom: 8px;
+					    border: 1px solid rgba(255,255,255, 0.1);
+					    clear: both;
+
+					    &:after{
+							content: "";
+							background-color: rgba(255,255,255, 0.3);
+							position: absolute;
+							left: 0px;
+							top: 0px;
+							width: 0%;
+							height: 100%;
+							@include transition-timing-function(cubic-bezier(.88,.03,.37,.97));
+							@include transition-duration(0.6s);
+					    }
+
+					    &.loaded[data-pct='0.1']{&:after{width:10%}}
+				    	&.loaded[data-pct='0.2']{&:after{width:20%}}
+				    	&.loaded[data-pct='0.3']{&:after{width:30%}}
+				    	&.loaded[data-pct='0.4']{&:after{width:40%}}
+				    	&.loaded[data-pct='0.5']{&:after{width:50%}}
+				    	&.loaded[data-pct='0.6']{&:after{width:60%}}
+				    	&.loaded[data-pct='0.7']{&:after{width:70%}}
+				    	&.loaded[data-pct='0.8']{&:after{width:80%}}
+				    	&.loaded[data-pct='0.9']{&:after{width:90%}}
+				    	&.loaded[data-pct='1']{&:after{width:100%}}
+					}
+
+					&.dark{
+						li{
+					    	border: 1px solid rgba(0,0,0, 0.1);
+
+					    	&:after{
+								background-color: rgba(0,0,0, 0.15);
+						    }
+						}
+				    }
+				}
+			}
+		}
+	}
+}

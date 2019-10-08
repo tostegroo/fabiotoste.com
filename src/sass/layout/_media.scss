@@ -1,0 +1,31 @@
+@import "base/*.*";
+
+@media only screen and (max-width: 1024px) {
+
+	.mobile{
+		display: block;
+	}
+
+	.desktop{
+		display: none;
+	}
+
+	@import "mobile/*.*";
+}
+
+@media only screen and (min-width: 1024px) {
+
+	.mobile{
+		display: none;
+	}
+
+	.desktop{
+		display: block;
+	}
+
+	@import "desktop/*.*";
+}
+
+@media print {
+  @include h5bp-media-print;
+}

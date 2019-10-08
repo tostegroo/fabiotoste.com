@@ -1,0 +1,79 @@
+html { overflow: visible;}
+body {
+    height: auto;
+   	overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+.gallery-title{
+	font-size: 50px;
+	height: 280px;
+	
+	&:after{
+		height: 222px;
+	}
+
+	h1{
+		padding-top: 37px;
+    	line-height: 39px;
+	
+		span{
+			font-size: 53px;
+		}
+
+		&:after{
+			display: none;
+		}
+	}
+
+	&.personal{
+		height: 322px;
+
+		&:after{
+			height: 227px;
+		}
+
+		h1{
+			padding-top: 20px;
+			line-height: 43px;
+			
+			span{
+				clear: both;
+			}
+
+			&:after{
+				bottom: 21px;
+			}
+		}
+	}
+}
+
+.gallery{
+	.gallery-item{
+		width: 100%;
+		height: 300px;
+	}
+}
+
+.mCSB_scrollTools{ 
+	visibility: hidden !important;
+}
+
+.single-close{
+	height: 70px;
+	margin: -25px -25px 0 0;
+
+	&:before{
+		top: 25px;
+	}
+
+	&:after{
+		top: 47px;
+	}
+	
+	.background{
+		top:-200px;
+		width: 54px;
+		height: 120px;
+	}
+}

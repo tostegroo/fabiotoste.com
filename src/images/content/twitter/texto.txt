@@ -1,0 +1,20 @@
+-O que é?
+	Um aplicativo web para acesso ao portifolio de assets do twitter. Este app é integrado com a API da plataforma extensis e feito totalmente em node.js
+
+-Para que serve
+	Uma interface on-line para ver o catalogo de assets do extensis, fazer o download e compartilhar o conteúdo sem precisar usar o admin do aplicativo ou fazer login.
+
+-Que problemas resolve
+	- Facilita para as equipes ter acesso rápido ao catalogo de assets disponiveis e usar de maneira bem prática e centralizada.
+	- Concentra todos os assets em um unico lugar, sem necessidade de crair ambientes na rede com pastas separadas, etc.
+
+	
+-Desafios encontrados
+	- Implementar um app em node.js
+	- Integração com API do extensis, que embora tenha documentação ela está incompleta e não existe para implementação em node.js
+
+	
+-Tecnologias empregadas
+	- Node.js - Todo app foi desenvolvido em node.js, framework de backend que facilita a implementação e diminui custos, além de criar um pacote centralizado de produção.
+	
+-Dados

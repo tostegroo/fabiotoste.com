@@ -1,0 +1,38 @@
+#header{
+	
+	.logo{
+		top: 15px;
+		@include scale(0.8);
+
+		.logo-text{
+			font-size: 56px;
+			width: 230px;
+			margin-left: -113px;
+		}
+	}
+
+	.home-share{
+		right: 50%;
+		margin-right: -69px;
+		z-index: 60;
+
+		.social-item-home{
+			&.facebook{
+				top: 67px;
+			}
+			&.twitter{
+				left: -12px;
+			}
+			&.gplus{
+				left: 12px;
+			}
+		}
+	}
+
+	&.small{
+		.logo{
+			top: 15px;
+			@include scale(0.8);
+		}
+	}
+}

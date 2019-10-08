@@ -1,0 +1,22 @@
+#main-loader, .single-loader{
+
+	.loader-bar{
+		width: 100px;
+		margin: 50px 0px 0px -50px;
+	}
+
+	.loader-content{
+		@include transform(translateZ(0px) scale(0.8));
+
+		&.animate{
+			@include animate(floatingMobile, 2s, 0s, ease(in-out-sine), infinite, forwards);
+		}
+	}
+
+	&.preclose{
+		.loader-content{
+			top: 60px;
+			@include scale(0.52);
+		}
+	}
+}

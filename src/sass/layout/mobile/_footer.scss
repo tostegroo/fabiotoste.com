@@ -1,0 +1,40 @@
+#footer {
+	.contact{
+		width: 100%;
+		margin: 20px auto;
+
+		.title-contact{
+			font-size: 30px;
+			line-height: 27px;
+
+			&:before{
+				top: 23px;
+			}
+		}
+
+		.info-content{
+    		width: 100%;
+
+    		.info-contact{
+    			float: right;
+    			width: 200px;
+    			margin-top: -20px;
+    			margin-right: 10px;
+
+    			.fmenu-item{
+    				margin-bottom: 13px;
+    				font-size: 18px;
+    			}
+    		}
+    	}
+	}
+
+	.social-menu{
+		width: 100%;
+		margin: 30px auto 30px auto;
+
+		.social-item{
+			width: 14.2857%;
+		}
+	}
+}

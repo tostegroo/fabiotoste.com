@@ -1,0 +1,2 @@
+id from 1 to 1000
+http://mentalfloss.com/api/1.0/views/amazing_facts.json?id=

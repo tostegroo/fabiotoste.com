@@ -1,0 +1,35 @@
+#footer {
+	.contact{
+    	.info-content{
+    		.info-contact{
+    			.fmenu-item{
+					&:hover{
+						color: $menuOver;
+						margin-right: 10px;
+
+						&:after{
+							right: -10px;
+							width: 80%;
+						}
+					}
+    			}
+    		}
+    	}
+	}
+
+	.social-menu{
+		.social-item{
+			&:hover{
+				&:before, &:after{
+					display: block;
+				}
+
+				span{
+					color: $menuOver;
+				}
+
+				@include textGlitch('smenu', 18, $menuOver, $footerbg, $fontFooter, $fontFooter, 60, 50);
+			}
+		}
+	}
+}

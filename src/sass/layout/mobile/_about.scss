@@ -1,0 +1,88 @@
+#c-about{
+	width: 100vw;
+	overflow: hidden;
+	
+	#about-close{
+		top: 20px;
+		left: -60px;
+		z-index: 300;
+		@include transition-timing-function(cubic-bezier(.88,.03,.37,.97));
+		@include transition-duration(0.6s);
+
+		&:before{
+			border-bottom: 1px solid #dedada;
+    	}
+
+    	&:after{
+			border-bottom: 1px solid #dedada;
+    	}
+
+		&.open{
+    		cursor: pointer;
+    		left: 20px;
+    	}
+	}
+
+	.about-container{
+		.about-scroll{
+			bottom: 30px;
+		}
+		.switchButton{
+			right: 25px;
+			bottom: 25px;
+		}
+
+		.title{
+			font-size: 8vw;
+			line-height: 5.5vw;
+			left: 25px;
+    		bottom: 26px;
+
+			strong{
+				font-size: 6vw;
+    			line-height: 6.5vw;
+				margin-left: 1px;
+			}
+		}
+
+		.about-content{
+			overflow-y: scroll;
+			
+			.content{
+				font-size: 15px;
+				line-height: 20px;
+				width: 100%;
+				min-width: auto;
+				
+				.about-section{
+					padding: 50px 50px 40px 35vw;
+
+					&:first-child{
+						padding-top: 60px;
+					}
+
+					&:last-child{
+						padding-bottom: 120px;
+					}
+				}
+
+				.subtitle{
+					font-size: 30px;
+					line-height: 30px;
+				}
+
+				.litletitle{
+					@include fontText;
+					font-size: 20px;
+					line-height: 20px;
+				}
+
+				ul{
+					li{
+						padding: 4px 10px 4px 7px;
+					}
+				}
+			}
+		}
+	}
+}

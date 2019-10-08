@@ -1,0 +1,122 @@
+#portfolio-single{
+	
+	.single-content{
+		height: 100%;
+		overflow-y: scroll;
+
+		&#single-content-bg{
+			width: 100vw;
+			
+			span{
+				top: -30px;
+				left: -20px;
+				float: left;
+				width: 100%;
+				font-size: 48vh;
+    			line-height: 45vh;
+				text-align: left;
+				margin-right: 0px;
+			}
+		}
+
+		.portfolio-single-header{
+			height: 99vh;
+			
+			.ps-side{
+				top: 40vh;
+				width: 100%;
+				height: calc(60vh);
+				
+				&.right-side{
+					padding:20px 30px 0px 30px;
+					
+					.psr-content{
+						display: block;
+						
+						h1{
+							font-size: 5vh;
+							line-height: 4.8vh;
+						}
+				
+						p{
+							font-size: 15px;
+    						line-height: 22px;
+						}
+					}
+				}
+			}
+		}
+
+		.portfolio-single-body{
+
+			.project-link{
+				right: -250px;
+				padding: 12px 60px 12px 20px;
+				font-size: 20px;
+				top: 85%;
+
+				&.open{
+					right: -40px;
+				}
+			}
+
+			.portfolio-single-body-content{
+				padding: 10px 0 50px 0;
+			}
+
+			.space{
+				height: 30px;
+			}
+
+			h1{
+				font-size: 30px;
+				margin: 5px 0px 15px 0px;
+			}
+
+			h2{
+				font-size: 20px;
+				margin: 0px 0px 10px 0px;
+			}
+
+			h3{
+				font-size: 16px;
+				margin: 0px 0px 5px 0px;
+			}
+
+			p{
+				font-size: 14px;
+				line-height: 22px;
+				margin: 0px 0px 10px 0px;
+			}
+
+			ul{
+				li{
+					@include rel;
+					width: 100%;
+					line-height: 18px;
+					margin: 2px 0px 2px 0px;
+				}
+			}
+
+			img, video, iframe, object{
+				margin: 5px 0px 10px 0px;
+			}
+
+			iframe{
+				height: auto;
+			}
+
+			.big{
+				font-size: 22px;
+				line-height: 30px;
+			}
+		}
+	}
+
+	.single-thumb{
+		img{
+			width: auto;
+			height: 100%;
+		}
+	}
+}

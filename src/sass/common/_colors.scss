@@ -1,0 +1,74 @@
+// colors
+$white: #fff;
+$turquoise: #22bfbf;
+$black: #000;
+$gray: #999;
+$darkgray: #333;
+$darkergray: #2a2a2a;
+$mediumgray: #b2b2b2;
+$lightgray: #dedada;
+$lightergray: #f2f2f2;
+$yellow: #eed111;
+
+$sitecolor: $turquoise;
+
+// elements color
+$line-height: 1.4 !default;
+$font-color: $white !default;
+
+$link-color: $white !default;
+$link-hover-color: $white !default;
+$link-visited-color: $white !default;
+
+$selected-font-color: $white !default;
+$selected-background-color: $turquoise !default;
+$invalid-background-color: $turquoise!default;
+
+$selected-background-color:  $turquoise;
+$selected-font-color: $white;
+
+$textoinput: #5c4471;
+$background: $darkgray;
+$fontColor: $black;
+$switchButton: #666;
+$switchButtonOver: $yellow;
+
+//loader
+$mainloader_background: $turquoise;
+$mainloader_bg: $darkergray;
+$mainloader_color: $white;
+$mainloader_colorSecundary: $lightgray;
+
+//sections backgrounds
+$hm_background: $black;
+$ab_background: $black;
+$pf_background: rgba($white, 0.9);
+$pw_background: rgba($turquoise, 0.9);
+
+//gallery
+$galleryBg: $white;
+$galleryTitleBgPf: $turquoise;
+$galleryTitleBgPfSecundary: #20b4b4;
+$galleryTitleColor: $white;
+$galleryTitleBgPw: #6a6e6e;
+$galleryTitleBgPwSecundary: #7a7e7e;
+$iteminfobg: $lightergray;
+$iteminfocolor: $black;
+$itemoverlayPort: rgba(0, 0, 0, 0.3);
+$itemoverlay: $black;
+
+//footer
+$footerbg: $darkergray;
+$fontFooter: #777;
+$footericobg: #222222;
+
+//logo
+$logotext: $black;
+
+//menu
+$menubg: $black;
+$menuOver: $turquoise;
+$menuOverDark: #048186;
+$menuColor: $white;
+$menuSmall: $white;
+$menuSmallbg: $darkgray;

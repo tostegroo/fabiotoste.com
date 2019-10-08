@@ -1,0 +1,21 @@
+#c-welcome{
+	.content{
+		.quote {
+			font-size: 20vh;
+		}
+
+		.top-quote{
+			top: 2vh;
+			left: 3vw;
+			line-height: 20vh;
+			@include disable-selection;
+		}
+
+		.bottom-quote{
+			bottom: 2vh;
+			right: 8vw;
+			line-height: 1vh;
+			@include disable-selection;
+		}
+	}
+}

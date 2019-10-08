@@ -1,0 +1,335 @@
+.stats{
+	position: absolute;
+	top:120px;
+	left:120px;
+	z-index: 999;
+	color: #fff;
+	font-size: 12px;
+}
+
+.draggers{
+	position: absolute;
+	top:120px;
+	left:120px;
+	width: 200px;
+	z-index: 999;
+	display: none;
+
+	.dragger{
+		@include rel;
+		width: 100%;
+		height: 20px;
+		margin-bottom: 40px;
+		z-index: 999;
+		clear: both;
+
+		&:before{
+			content: "";
+    		position: absolute;
+			top: 50%;
+			left: 0px;
+			width: 100%;
+			height: 2px;
+			margin-top: -1px;
+			background-color: #fff;
+			z-index: 998;
+		}
+
+		.draggable{
+			cursor: pointer;
+			content: "";
+    		position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 10px;
+			height: 100%;
+			background-color: #e2e2e2;
+			z-index: 998;
+		}
+
+		.value{
+			position: absolute;
+			width: 100%;
+			top: 30px;
+			left: 0px;
+			font-size: 13px;
+			color: #fff;
+		}
+	}
+}
+
+#dist{
+	top:120px;
+	left:120px;
+}
+
+#c-welcome{
+	position: fixed;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	z-index: 10;
+	background-color: $hm_background;
+
+	canvas{
+		position: absolute;
+		top:0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+	}
+
+	.content{
+		position: absolute;
+		top:0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 11;
+
+		.quote {
+			position: absolute;
+			font-size: 30vh;
+			color: $turquoise;
+    		font-family: Georgia, "Times New Roman", Serif;
+    		font-style: italic;
+    		height: 13vh;
+			width: 15vh;
+			overflow: hidden;
+    		@include opacity(0.15);
+		}
+
+		.top-quote{
+			top: 2vh;
+			left: 2vw;
+			@include disable-selection;
+		}
+
+		.bottom-quote{
+			bottom: 4vh;
+			right: 3vw;
+			@include disable-selection;
+		}
+
+		.text-wellcome{
+			position: absolute;
+			bottom: 14vh;
+			right: 13vw;
+			font-size: 6vh;
+			line-height: 6vh;
+			color: $turquoise;
+			@include fontEspecial;
+			text-align: right;
+    		width: 80vw;
+			@include opacity(0.3);
+			@include disable-selection;
+
+			i{
+				font-size: 4vh;
+				font-style: italic;
+			}
+		}
+
+		.info{
+			position: absolute;
+			bottom: 4vh;
+			left: 3vw;
+			font-size: 1.5vh;
+			line-height: 2vh;
+			color: $white;
+			@include fontLight;
+			text-align: left;
+			@include opacity(0.3);
+			@include disable-selection;
+		}
+
+		.holdbar{
+			position: absolute;
+			left: 0px;
+			top: 50%;
+			margin-top: -1px;
+			background-color: $turquoise;
+			width: 0%;
+			height: 2px;
+			z-index: 14;
+		}
+
+		.portfolio-info{
+			position: absolute;
+			top: -10vh;
+			left: 12vw;
+			color: $white;
+			
+			.client{
+				position: relative;
+				float: left;
+				left: 2px;
+				width: 100%;
+				text-align: left;
+				letter-spacing: 2px;
+				@include fontLight;
+				font-size: 0.5vw;
+				height: 0.5vw;
+				text-transform: uppercase;
+				@include transition-timing-function(ease-in-out);
+				@include transition-duration(0.6s);
+				
+				b{
+					@include fontBold;
+					font-weight: normal;
+				}
+			}
+
+			.title{
+				position: relative;
+				float: left;
+				width: 100%;
+				@include fontLight;
+				font-size: 2.1vw;
+				height: 2.2vw;
+				text-align: left;
+				text-transform: uppercase;
+				font-weight: normal;
+				
+				b{
+					@include fontBold;
+				}
+			}
+
+			&.out{
+				.client{
+					height: 1.6vw;
+				}
+			}
+		}
+
+		.portfolio-cta {
+			cursor: pointer;
+			position: absolute;
+			bottom: -10vh;
+			right: 12vw;
+			@include fontLight;
+			color: $white;
+			font-size: 2.1vw;
+			text-transform: uppercase;
+
+			b{
+				position: relative;
+				float: left;
+				@include fontBold;
+				@include transition-timing-function(ease-in-out);
+				@include transition-duration(0.6s);
+			}
+			
+			&.out{
+				b{
+					margin-top: 2.1vw;
+				}
+			}
+		}
+	}
+}
+
+#fixed-content{
+	position: fixed;
+	bottom: 40px;
+    left: 50%;
+    margin-left: -13px;
+    width: 26px;
+    height: 50px;
+    z-index: 15;
+
+	.mouse-scroll{
+		cursor: pointer;
+		position: absolute;
+		bottom:0;
+		left:0;
+		margin-left: 0;
+		width: 26px;
+		height: 46px;
+		border: 1px solid $white;
+		@include border-radius(10px);
+		@include opacity(0.5);
+		@include transition-timing-function(cubic-bezier(.88,.03,.37,.97));
+		@include transition-duration(0.4s);
+		color: $white;
+		
+		&.close{
+			height: 0px;
+
+			&:before{
+				height: 0px;
+				@include opacity(0);
+			}
+
+			p{
+				@include opacity(0);
+			}
+
+			span{
+				@include opacity(0);
+			}
+		}
+
+		&:before{
+			content: "";
+    		position: absolute;
+			top: 4px;
+			width: 6px;
+			height: 12px;
+			left: 50%;
+			margin-left: -3px;
+			background-color: $menuOver;
+			border: 1px solid $menuOverDark;
+			@include transition-timing-function(cubic-bezier(.88,.03,.37,.97));
+			@include transition-duration(0.5s);
+		}
+
+		p{
+			position: absolute;
+			left: 50%;
+			margin-left: -50px;
+			text-align: center;
+			width: 100px;
+			top:-20px;
+			height: 12px;
+			font-size: 12px;
+			@include transition-timing-function(ease);
+			@include transition-duration(0.4s);
+		}
+
+		span{
+			position: absolute;
+			text-align: center;
+			width: 103%;
+			font-size: 15px;
+			bottom: -10px;
+			@include transition-timing-function(ease);
+			@include transition-duration(0.4s);
+
+			&:before{
+				content: "";
+	    		position: absolute;
+	    		top:0px;
+	    		left: 5px;
+				width: 9px;
+				border-bottom: 1px solid $white;
+				@include transform-origin(0%, 50%);
+				@include transform(rotate(30deg));
+			}
+			&:after{
+				content: "";
+	    		position: absolute;
+	    		top:0px;
+	    		right: 5px;
+				width: 9px;
+				border-bottom: 1px solid $white;
+				@include transform-origin(100%, 50%);
+				@include transform(rotate(-30deg));
+			}
+		}
+	}
+}

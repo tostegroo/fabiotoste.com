@@ -1,0 +1,20 @@
+-O que é?
+	Website da Sukita, todo feito com visual animado e comunicação moderna
+
+-Para que serve
+	Site para apresentar os produtos da Sukita e aproximar a marca do publico alvo
+
+-Que problemas resolve
+	Posiciona a marca na internet dentro de uma comunicação criativa e divertida, assim como o espirito do produto
+
+-Desafios encontrados
+	- Fazer um website todo animado, onde cada animação se desenvolva conforme o scroll
+	- Deixar as animações fluidas mas leves
+	- Processo manual de animação (cada animação teve que ser tratada individualemente)
+	- Apesar de ser um website todo em imagens, deixar o carregamento o mais rápido possível
+	
+-Tecnologias empregadas
+	- Bibliotecas de animação prontas e partes customizadas para integrar o scroll e as animações
+	- Utilização de spritesheets para diminuir consumo e tempo de carregamento das images
+	
+-Dados

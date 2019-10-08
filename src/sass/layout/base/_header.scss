@@ -1,0 +1,191 @@
+#header{
+	position:fixed;
+	top:0px;
+	left: 0px;
+	width:100%;
+	height:0px;
+	background-color: transparent; 
+	z-index:180;
+	@include transition-timing-function(cubic-bezier(.11,.54,.59,.95));
+	@include transition-duration(0.3s);
+	@include transition-property(height, background-color, color, opacity);
+	color: $menuColor;
+
+	.logo{
+		position: absolute;
+		left:50%;
+		margin-left: -40px;
+		top: 35px;
+		cursor: pointer;
+		@include transition-timing-function(cubic-bezier(.11,.54,.59,.95));
+		@include transition-duration(0.3s);
+		@include transform-origin(50%, 50%);
+		z-index:180;
+		height: 64px;
+		width: 80px;
+
+		.logo-text{
+			position: absolute;
+			top: 8px;
+			left: 50%;
+			font-size: 56px;
+			text-transform: uppercase;
+			z-index: 160;
+			opacity: 0.8;
+			text-align: center;
+			width: 230px;
+			margin-left: -113px;
+			@include fontLight;
+			@include scale(0.8);
+			@include opacity(0);
+			@include transition-timing-function(cubic-bezier(.11,.54,.59,.95));
+			@include transition-duration(0.6s);
+		}
+
+		&:before{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			@include opacity(0);
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 40px 64px 40px;
+			border-color: transparent transparent $turquoise transparent;
+			z-index:179;
+			@include transition-timing-function(cubic-bezier(.11,.54,.59,.95));
+			@include transition-duration(0.3s);
+		}
+
+		svg{
+			position: absolute;
+			top:0px;
+			left: 0px;
+			width: 80px;
+			height: 64px;
+			@include transition-timing-function(cubic-bezier(.11,.54,.59,.95));
+			@include transition-duration(0.3s);
+			@include transform-origin(50%, 70%);
+			z-index:180;
+		}
+
+		#logo-svg{
+			fill: $turquoise;
+			@include transition-timing-function(cubic-bezier(.11,.54,.59,.95));
+			@include transition-duration(0.3s);
+		}
+	}
+
+	.menu{
+		position: relative;
+		float: right;
+		height: 100%;
+		margin-right: 120px;
+		margin-top: 10px;
+
+		.menu-item{
+			cursor: pointer;
+			@include rel;
+			@include fontBold;
+			font-size: 18px;
+			text-transform: uppercase;
+			margin-left: 5px;
+			line-height: 60px;
+			overflow: hidden;
+			@include transition-timing-function(cubic-bezier(.11,.54,.59,.95));
+			@include transition-duration(0.15s);
+
+			&.even{
+				@include fontLight;
+				line-height: 59px;
+			}
+		}
+	}
+
+	.home-share{
+		position: absolute;
+		top: 16px;
+		right: 90px;
+		z-index: 60;
+
+		.social-item-home{
+			@include rel;
+			text-decoration: none;
+			font-size: 24px;
+			width: 46px;
+			height: 46px;
+			top: 0px;
+			@include transition-timing-function(ease);
+			@include transition-duration(0.08s);
+			outline: none;
+
+			&:before, &:after{
+				text-align: center;
+				height: 100%;
+				width: 100%;
+				padding-top: 14px;
+				font-family: "icofon" !important;
+				font-style: normal !important;
+				font-weight: normal !important;
+				font-variant: normal !important;
+				text-transform: none !important;
+				speak: none;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				display: none;
+				z-index: 61;
+			}
+
+			&.twitter:before, &.twitter:after{
+				content: "\6b" !important;
+			}
+
+			&.facebook:before, &.facebook:after{
+				content: "\44" !important;
+			}
+			&.gplus:before, &.gplus:after{
+				content: "\73" !important;
+			}
+
+			span{
+				position: absolute;
+				color: $mediumgray;
+				text-align: center;
+				height: 100%;
+				width: 100%;
+				line-height: 55px;
+				@include transition-timing-function(ease);
+				@include transition-duration(0.2s);
+				z-index: 60;
+				outline: none;
+
+				&.icon-social-googleplus{
+					line-height: 56px;
+				}
+			}
+		}
+	}
+
+	&.small{
+		height:0px;
+		color: $menuSmall;
+		@include opacity(0.7);
+
+		/*.logo{
+			top: 6px;
+			@include scale(0.7);
+		}*/
+
+		.menu{
+			.menu-item{
+				line-height: 60px;
+				
+				&.even{
+					line-height: 59px;
+				}
+			}
+		}
+	}
+}

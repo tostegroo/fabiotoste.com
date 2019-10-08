@@ -1,0 +1,82 @@
+@mixin make-keyframes ($animation_name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animate ($animation, $duration, $delay, $ease, $count, $mode) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-iteration-count: $count;
+    -webkit-animation-timing-function: $ease;
+    -webkit-animation-fill-mode: $mode; 
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-iteration-count: $count;
+    -moz-animation-timing-function: $ease;
+    -moz-animation-fill-mode: $mode;
+
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-iteration-count: $count;
+    -o-animation-timing-function: $ease;
+    -o-animation-fill-mode: $mode;
+
+    -ms-animation-delay: $delay;
+    -ms-animation-duration: $duration;
+    -ms-animation-name: $animation;
+    -ms-animation-iteration-count: $count;
+    -ms-animation-timing-function: $ease;
+    -ms-animation-fill-mode: $mode;
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-iteration-count: $count;
+    animation-timing-function: $ease;
+    animation-fill-mode: $mode;
+}
+
+@include make-keyframes(floating) {
+	0% {
+		@include transform(translate(0px, 0px));
+	}
+	50% {
+		@include transform(translate(0px, -15px));
+	}
+	100% {
+		@include transform(translate(0px, 0px));
+	}
+}
+
+@include make-keyframes(floatingMobile) {
+    0% {
+        @include transform(translate(0px, 0px) scale(0.8));
+    }
+    50% {
+        @include transform(translate(0px, -10px) scale(0.8));
+    }
+    100% {
+        @include transform(translate(0px, 0px) scale(0.8));
+    }
+}

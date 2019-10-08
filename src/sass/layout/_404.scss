@@ -1,0 +1,156 @@
+.content{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: $darkergray;
+	color: $turquoise;
+
+	.t404{
+		position: absolute;
+		float: left;
+		top: 0px;
+		left: 0px;
+		@include fontLight;
+		font-size: 500px;
+		line-height: 225px;
+
+		span{
+			@include rel;
+			margin-right: -85px;
+			visibility: hidden;
+		}
+
+		b{
+			@include rel;
+			@include fontBold;
+			font-size: 450px;
+			margin-top: -4px;
+			margin-right: -85px;
+		}
+	}
+	
+	.img{
+		position: absolute;
+		top: 61px;
+		left: 80px;
+		width: 500px;
+		height: 255px;
+
+		svg{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+		}
+
+		#logo-svg{
+			fill: $turquoise;
+		}
+	}
+
+	.text{
+		@include fontLight;
+		position: absolute;
+		top: 287px;
+		left: 109px;
+		width: 850px;
+		font-size: 40px;
+		text-align: right;
+		line-height: 33px;
+		text-transform: uppercase;
+
+		b{
+			@include fontBold;
+		}
+
+		a{
+			position: relative;
+			text-decoration: none;
+			color: #048186;
+			@include transition-timing-function(ease);
+			@include transition-duration(0.2s);
+			text-transform: lowercase;
+		}
+	}
+
+	&:after{
+		content: "";
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		width: calc(100vw - 970px);
+		height: 100vh;
+		background: $turquoise;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+
+	.mobile{display: block;}
+	.desktop{display: none;}
+
+	.content{
+		.t404{
+			left: -6px;
+			font-size: 200px;
+			line-height: 104px;
+
+			span{
+				margin-right: -30px;
+			}
+
+			b{
+				font-size: 210px;
+				margin-right: -30px;
+			}
+		}
+
+		.img{
+			top: 25px;
+			left: 52px;
+			width: 200px;
+			height: 120px;
+		}
+
+		.text{
+			top: 150px;
+			left: 0px;
+			width: 97%;
+			font-size: 17px;
+			line-height: 16px;
+
+			a{
+				font-size: 43px;
+			}
+		}
+
+		&:after{
+			bottom: 0px;
+			left: 0px;
+			top: auto;
+			right: auto;
+			width: 100vw;
+			height: 4vh;
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+
+	.mobile{display: none;}
+	.desktop{display: block;}
+
+	.content{
+		.text{	
+			a{
+				&:hover{
+					color: $white;
+				}
+			}
+		}
+	}
+}

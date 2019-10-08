@@ -1,0 +1,6 @@
+src/node_modules
+src/.sass-cache
+public/css/*
+public/js/*
+*.sublime-project
+*.sublime-workspace

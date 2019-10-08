@@ -1,0 +1,34 @@
+#modal{
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:95;
+	visibility:hidden;
+	@include opacity(0);
+	@include translateZ(0px);
+	
+	.modal-bg{
+		position:absolute;
+		top:0px;
+		left:0px;
+		width:100%;
+		height:100%;
+		@include opacity(0.5);
+		background-color:#000;
+		@include translateZ(0px);
+		z-index:95;
+	}
+	.modal-container{
+		position:absolute;
+		top:20%;
+		left:50%;
+		width:620px;
+		height:540px;
+		margin:-220px 0px 0px -310px;
+		background-color: $background;
+		@include box-shadow(rgba(0,0,0,0.3) 0px 0px 30px);
+		z-index:96;	
+	}
+}

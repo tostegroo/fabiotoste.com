@@ -1,0 +1,18 @@
+#c-work{
+	.gallery{
+		.gallery-item{
+			&.work{
+				width: 50%;
+				@include translateZ(0px);
+			}
+		}
+	}
+}
+
+#work-single{
+	.single-nav{
+		width: 70px;
+		top: 80%;
+    	margin-top: 0px;
+	}
+}

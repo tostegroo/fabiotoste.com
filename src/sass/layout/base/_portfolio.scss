@@ -1,0 +1,424 @@
+#c-portfolio{
+	z-index: 11;
+	margin-top: 900px;
+	background-color: $pf_background;
+
+	.gallery{
+		@include rel;
+		width: 100%;
+
+		.gallery-item{
+			@include perspective(1200px);
+			@include perspective-origin(50% 100%);
+			background-color: transparent;
+
+			.gi-img{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				@include transition-timing-function(cubic-bezier(.165,.84,.44,1));
+				@include transition-duration(0.6s);
+				@include transform-origin(50%, 50%);
+				@include scale(1.05);
+				z-index: 50;
+
+				.slice{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top:0px;
+					left:0px;
+					overflow: hidden;
+					z-index: 51;
+					background-color: transparent;
+					background-size: cover;
+					background-repeat: no-repeat;
+				}
+
+				&:after{
+					position: absolute;
+					content: "";
+					width: 100%;
+					height: 100%;
+					z-index: 52;
+					background-color: $itemoverlayPort;
+					@include transition-timing-function(ease);
+					@include transition-duration(0.2s);
+					@include opacity(0);
+				}
+			}
+			
+			.overlay{
+				position: absolute;
+				width: 100%;
+				height: 160px;
+				overflow: hidden;
+				bottom:-160px;
+				left:0%;
+				z-index: 60;
+				display: table;
+				@include transition-timing-function(cubic-bezier(.165,.84,.44,1));
+				@include transition-duration(0.5s);
+				background-color: rgba($white, 0.9);
+				@include translateZ(0px);
+				mix-blend-mode: lighten;
+				
+				.overlay-info{
+					margin: 0 auto;
+					width: 400px;
+					z-index: 51;
+					color: $iteminfocolor;
+					display: table-cell;
+					vertical-align: middle;
+					padding: 0 50px;
+					
+					.client{
+						position: relative;
+						float: left;
+						width: 100%;
+						text-align: left;
+						letter-spacing: 2px;
+						@include fontLight;
+						font-size: 14px;
+						height: 18px;
+						overflow: hidden;
+						text-transform: uppercase;
+						
+						span{
+							position:relative;
+							top:100%;
+							@include transition(top cubic-bezier(.165,.84,.44,1) .6s .2s, opacity cubic-bezier(.165,.84,.44,1) .6s .2s);
+							@include opacity(0);
+						}
+						
+						b{
+							@include fontBold;
+							font-weight: normal;
+						}
+					}
+
+					.line{
+						position: relative;
+						float: left;
+						width: 0%;
+						left: 50%;
+						border-bottom: 1px solid $iteminfocolor;
+						@include opacity(0.5);
+						margin: 5px 0 5px 0%;
+						@include transition(all cubic-bezier(.165,.84,.44,1) .4s .25s);
+					}
+
+					.title{
+						position: relative;
+						float: left;
+						width: 100%;
+						@include fontLight;
+						font-size: 40px;
+						height: 60px;
+						text-align: left;
+						overflow: hidden;
+						text-transform: uppercase;
+						font-weight: normal;
+						
+						span{
+							position:relative;
+							top:-100%;
+							@include transition(top cubic-bezier(.165,.84,.44,1) .6s .2s);
+						}
+						
+						b{
+							@include fontBold;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#portfolio-single{
+	position: fixed;
+	z-index: 999;
+	width: 100vw;
+	height: 100vh;
+
+	.single-close{
+		&:before{
+			border-bottom: 1px solid $black;
+		}
+
+		&:after{
+			border-bottom: 1px solid $black;
+		}
+	}
+
+	.single-content{
+		position: absolute;
+		top: 100vh;
+		left: 0px;
+		width: 100vw;
+		height: 100vh;
+		z-index: 998;
+
+		&#single-content-bg{
+			width: 50vw;
+			mix-blend-mode: lighten;
+			background-color: $white;
+			overflow: hidden;
+
+			span{
+				position: relative;
+				top:0px;
+				float: right;
+				width: 200%;
+				@include fontBold;
+				font-size: 145vh;
+				line-height: 100vh;
+				text-align: right;
+				margin-right: -20px;
+			}
+		}
+
+		.portfolio-single-header{
+			@include rel;
+			width: 100%;
+			height: 100vh;
+
+			.ps-side{
+				position: absolute;
+				top: 0px;
+				width: 50%;
+				height: 100%;
+				
+				&.left-side{
+					left: 0px;
+				}
+				
+				&.right-side{
+					right: 0px;
+					@include fontText;
+					font-size: 18px;
+					padding:200px 20% 100px 50px;
+					background-color: $white;
+					color: $black;
+					display: table;
+
+					.psr-content{
+						display: table-cell;
+						vertical-align: middle;
+
+						h1{
+							@include rel;
+							width: 100%;
+							clear: both;
+							text-transform: uppercase;
+							margin-bottom: 30px;
+							@include fontBold;
+							font-size: 8vh;
+							line-height: 7vh;
+
+							span{
+								@include fontLight;
+								font-weight: normal;
+							}
+						}
+
+						p{
+							@include fontText;
+							width: 100%;
+							clear: both;
+							font-size: 20px;
+    						line-height: 32px;
+						}
+					}
+				}
+			}
+		}
+
+		.portfolio-single-body{
+			@include rel;
+			width: 100%;
+			background-color: $white;
+			color: $black;
+
+			.project-link{
+				position: fixed;
+				right: -500px;
+				top: 50%;
+				padding: 20px 100px 20px 30px;
+				@include fontText;
+				font-size: 40px;
+				text-decoration: none;
+				background-color: $turquoise;
+				color: $white;
+				z-index: 99; 
+				@include transition-duration(0.6s);
+
+				b{
+					@include fontBold;
+				}
+
+				&.open{
+					right: -60px;
+				}
+			}
+
+			.psb-wrap{
+				margin: 0 auto;
+				width: 80%;
+			}
+
+			a{
+				text-decoration: underline;
+				color: $turquoise;
+				@include transition-timing-function(ease);
+				@include transition-duration(0.2s);
+			}
+
+			.portfolio-single-body-content{
+				@include rel;
+				width: 100%;
+				max-width: 1000px;
+				padding: 200px 0 50px 0;
+			}
+
+			.space{
+				@include rel;
+				width: 100%;
+				height: 60px;
+			}
+
+			h1{
+				@include rel;
+				width: 100%;
+				@include fontBold;
+				font-size: 60px;
+				margin: 10px 0px 25px 0px;
+				clear: both;
+
+				b{
+					@include fontLight;
+				}
+			}
+
+			h2{
+				@include rel;
+				width: 100%;
+				@include fontBold;
+				font-size: 30px;
+				margin: 0px 0px 20px 0px;
+				clear: both;
+			}
+
+			h3{
+				@include rel;
+				width: 100%;
+				@include fontBold;
+				font-size: 22px;
+				margin: 0px 0px 15px 0px;
+				clear: both;
+			}
+
+			p{
+				@include rel;
+				width: 100%;
+				@include fontText;
+				font-size: 16px;
+				line-height: 28px;
+				margin: 0px 0px 20px 0px;
+				clear: both;
+
+				b, strong{
+					@include fontBold;
+				}
+
+				a{
+					@include fontBold;
+					text-decoration: underline;
+					color: $turquoise;
+				}
+			}
+
+			ul{
+				li{
+					@include rel;
+					width: 100%;
+					line-height: 24px;
+					margin: 2px 0px 2px 0px;
+				}
+			}
+
+			img, video, iframe, object{
+				@include rel;
+				width: 100%;
+				margin: 20px 0px 30px 0px;
+				clear: both;
+			}
+
+			iframe{
+				height: 560px;
+			}
+
+			img{
+				border: 1px solid #f1f1f1;
+
+				&.half{
+					width: 50%;
+					clear: none;
+				}
+			}
+
+			.portfolio-single-body-footer{
+				@include rel;
+				width: 100%;
+				height: 16px;
+				padding: 0px;
+				background-color: $turquoise;
+			}
+
+			.big{
+				font-size: 30px;
+				line-height: 38px;
+			}
+		}
+	}
+
+	.single-thumb{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		overflow: hidden;
+		background-color: $darkgray;
+		z-index: 997;
+
+		img{
+			position: absolute;
+			top:0px;
+			left: 0px;
+			width: 100%;
+			@include transform-origin(50%, 36%);
+			@include scale(1.05);
+			z-index: 997;
+		}
+
+		&:after{
+			position: absolute;
+			top:0px;
+			left: 0px;
+			content: "";
+			width: 100%;
+			height: 100%;
+			background: url(../imgs/pattern.png);
+			background-repeat: repeat;
+			z-index: 998;
+		}
+	}
+
+	.single-loader{
+		z-index: 1000;
+		width: 0;
+	}
+}

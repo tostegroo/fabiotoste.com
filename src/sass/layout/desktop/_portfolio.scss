@@ -1,0 +1,80 @@
+#c-portfolio{
+	background: transparent;
+	pointer-events:none;
+
+	.gallery-title{
+		overflow: visible;
+		height: 0px;
+
+		.gallery-wrap {
+			width: 100vw; 
+			max-width: 100vw;
+		}
+	}
+
+	.gallery{
+		padding-bottom: 5vh;
+		
+		.gallery-item{
+			&.hover:hover{
+				.gi-img{
+					@include transform(scale(1.05) translateY(-15px));
+
+					&:after{
+						@include opacity(1);
+					}
+
+					.slice{
+						background-color: transparent;
+					}
+				}
+
+				.overlay{
+					bottom: 0px;
+					
+					.client{
+						span{
+							top:0%;
+							@include opacity(1);
+						}
+					}
+					.line{
+						width: 100%;
+						margin-left: -50%;
+					}
+
+					.title{
+						span{
+							top:0%;
+						}
+					}
+				}
+
+				.info{
+					bottom:0px;
+				}
+			}
+		}
+	}
+}
+
+#portfolio-single{
+	.single-content{
+		.portfolio-single-body{
+			.project-link{				
+				&.open{
+					&:hover{
+						right: -40px;
+						padding-left: 20px;
+					}
+				}
+			}
+
+			a{
+				&:hover{
+					color: #048186;
+				}
+			}
+		}
+	}
+}

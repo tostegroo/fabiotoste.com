@@ -1,0 +1,17 @@
+#fixed-content{
+	.mouse-scroll{
+		&:hover{
+			@include opacity(0.8);
+		}
+	}
+}
+
+#c-welcome{
+	.content{
+		.portfolio-cta {
+			&:hover{
+				@include textGlitch('seemore', 56, #fff, #000, $menuOver, $menuOver, 300, 60);
+			}
+		}
+	}
+}

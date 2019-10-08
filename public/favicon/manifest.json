@@ -1,0 +1,16 @@
+{
+	"short_name": "fabiotoste",
+	"name": "fabiotoste.com",
+	"icons": [
+		{
+			"src": "\/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image\/png"
+		}
+	],
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait",
+	"theme_color": "#22bfbf",
+	"background_color": "#e2e2e2"
+}

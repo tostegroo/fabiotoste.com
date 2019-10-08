@@ -1,0 +1,30 @@
+#c-about{
+	#about-close{
+    	&.open:hover{
+			&:before{
+				top: 23px;
+				border-color: $menuOver;
+	    	}
+
+	    	&:after{
+	    		top: 17px;
+	    		border-color: $menuOver;
+	    	}
+    	}
+	}
+
+	.about-container{
+		.about-scroll{
+			&:hover{
+				@include opacity(1);
+			}
+		}
+		.switchButton{
+			&:hover{
+				&:after{
+					background-color: $switchButtonOver;
+				}
+			}
+		}
+	}
+}

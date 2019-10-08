@@ -1,0 +1,21 @@
+-O que é?
+	Site completo da plataforma skol. Chamado de skolland engloba todo conteúdo de skol e dentro dele todos os hotsites de todos os produtos skol, como skol beats, skol beats senses, skol beats spirit, além do site skol music, que é um portal de música com conteúdo exclusivo de diversos festivais mantidos pela skol
+
+-Para que serve
+	O site skolland centraliza todo conteúdo da marca skol e direciona o usuário para todos os produtos relacionados da skol, assim em um único lugar o consumidor pode ter acesso a todo tipo de produto e conteúdo relacionado a skol. O site skol music é um portal de música para trazer ao consumidor da skol beats e seus derivados um panorama geral de tudo que acontece no mundo da música e nos festivais patrocinados pela skol, assim como trazer musica ao vivo/clipes em streams toda a semana.
+
+-Que problemas resolve
+	O skolland cria uma plataforma única de acesso a diversas marcas da skol e facilita a atualização de conteúdo e centralização de cadastro, assim como facilita a criação de novas campanhas para produtos da linha e lançamentos.
+	O site de skol music aproxima o consumidor e publico alvo da marca. A skol através dos festivais marca presença como marca jovem e antenada, com o site de conteúdo cria um vinculo direto entre seu publico, facilitando a divulgação de novas campanhas e produtos.
+	
+-Desafios encontrados
+	- O site de skolland, pela sua grandeza, trouxe diversos obstáculos em sua implantação. Por ser um site de muitos acessos simultâneos e grande fluxo de dados. A infraestrutura desse site foi contruída para que conseguisse aguentar toda a carga necessária. Por ser um site com diversos subsites/hotsites, a estrutura foi desenvolvida para ser escalonável e aceitar novos conteúdos constantemente e de maneira mais rápida possivel. 
+	- O site de skol Music, por ser um portal de conteúdo, teve seu desafio no backend, onde é administrado todo esse conteúdo e além disso possibilita algumas alterações de layout para que o conteúdo seja mostrado da melhor forma possível.
+	- Fazer toda estrutura ser escalonável para comportar novos sites
+
+	
+-Tecnologias empregadas
+	- Cms proprio
+	- Banco de dados robusto e infraestrutura escalonável.
+	
+-Dados

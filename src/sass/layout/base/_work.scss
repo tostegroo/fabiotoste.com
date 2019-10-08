@@ -1,0 +1,332 @@
+#c-work{
+	background-color: $pw_background;
+	z-index: 12;
+	margin-bottom: 350px;
+
+	.gallery{
+		.gallery-item{
+			&.work{
+				width: 12.5%;
+				@include translateZ(0px);
+
+				&:before{
+					content: "";
+		    		position: absolute;
+		    		top:0px;
+		    		left: 0px;
+					width: 100%;
+					height: 100%;
+					pointer-events:none;
+					background: $itemoverlay;
+					@include opacity(0);
+					background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+					background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 100%);
+					background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 100%);
+					z-index: 22;
+				}
+
+				&.animate{
+					@include transition-timing-function(ease);
+					@include transition-duration(0.3s);
+				}
+
+				&.overlay{
+					&:before{
+						@include opacity(0.5);
+
+						span{
+							top:0%;
+						}
+					}
+
+				}
+			}
+
+			&.p-top{
+				@include transform-origin(50%, 0%, 0px);
+				@include transform(rotateX(10.24433684deg) scale(1, 1.016199175));
+				z-index: 390;
+
+				&:before{
+					background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+					background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 80%);
+					background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 80%);
+				}
+			}
+
+			&.p-bottom{
+				@include transform-origin(50%, 100%, 0px);
+				@include transform(rotateX(-10.24433684deg) scale(1, 1.016199175));
+				z-index: 391;
+
+				&:before{
+					background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 80%);
+					background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 80%);
+					background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 80%);
+				}
+			}
+
+			&.p-left{
+				@include transform-origin(0%, 50%, 0px);
+				@include transform(rotateY(-10.24433684deg) scale(1.016199175,1));
+				z-index: 392;
+
+				&:before{
+					background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+					background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 80%);
+					background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 80%);
+				}
+			}
+
+			&.p-right{
+				@include transform-origin(100%, 50%, 0px);
+				@include transform(rotateY(10.24433684deg) scale(1.016199175 ,1));
+				z-index: 393;
+
+				&:before{
+					background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 80%);
+					background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 80%);
+					background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 80%);
+				}
+			}
+		}
+	}
+}
+
+#work-single{
+	position: fixed;
+	z-index: 999;
+	width: 100vw;
+	height: 100vh;
+
+	.single-content{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100vw;
+		height: 100vh;
+		z-index: 998;
+
+		.single-img{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			z-index: 998;
+			cursor: move;
+			cursor: -webkit-grab;
+			cursor: -moz-grab;
+			cursor: grab;
+
+			img{
+				position: absolute;
+				width: 100%;
+				top:0px;
+				left:0px;
+				z-index: 19;
+			}
+
+			&:active{
+				cursor: move;
+				cursor: -webkit-grabbing;
+				cursor: -moz-grabbing;
+				cursor: grabbing;
+			}
+		}
+
+		.single-label{
+			position: absolute;
+			right: 30px;
+			bottom: 30px;
+			text-align: right;
+			font-size: 20px;
+			color: $black;
+			z-index: 999;
+			@include transition-timing-function(cubic-bezier(.165,.84,.44,1));
+			@include transition-duration(0.5s);
+			padding: 30px 10px 0px 30px;
+
+			&:before{
+				content: "";
+				position: absolute;
+				bottom: -30px;
+				right: -30px;
+				width: 104%;
+				height: 120%;
+				background-color: $white;
+				z-index: 0;
+			}
+
+			p{
+				position: relative;
+				z-index: 1;
+			}
+
+			strong{
+				@include fontBold;
+			}
+
+			&.closed{
+				bottom: -300px;
+			}
+		}
+	}
+
+	.single-thumb{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		overflow: hidden;
+		background-color: $darkgray;
+		z-index: 997;
+	}
+
+	.single-nav{
+		cursor: pointer;
+		position: absolute;
+		width: 120px;
+		height: 80px;
+		top:50%;
+		margin-top: -40px;
+		z-index: 1000;
+		@include transition-timing-function(cubic-bezier(.165,.84,.44,1));
+		@include transition-duration(0.5s);
+
+		&:before{
+			content: "";
+    		position: absolute;
+    		top: 0px;
+    		left: 0px;
+			width: 100%;
+			height: 50%;
+			@include transition-timing-function(ease);
+			@include transition-duration(0.2s);
+			z-index: 0;
+			background-color: $white;
+		}
+
+		p{
+			position: absolute;
+			top: 50%;
+			margin-top: -22px;
+			color: $black;
+			@include transition-timing-function(ease);
+			@include transition-duration(0.2s);
+			z-index: 6;
+		}
+
+		&:after{
+			content: "";
+    		position: absolute;
+    		top: 50%;
+			top: calc(50% - 1.5px);
+			width: 100%;
+			border-bottom: 3px solid $black;
+			left: 0;
+			@include transition-timing-function(cubic-bezier(.88,.03,.37,.97));
+			@include transition-duration(0.2s);
+			z-index: 5;
+		}
+
+		span{
+			content: "";
+			position: absolute;
+			height: 50%;
+			top: 50%;
+			border-left: 1px solid $black;
+			@include transform-origin(0%, 0%);
+			z-index: 5;
+		}
+
+		&.next{
+			right: 0;
+
+			p{
+				left: 0;
+			}
+
+			span{
+				left: 0;
+			}
+		}
+
+		&.prev{
+			left: 0;
+
+			p{
+				right: 0;
+			}
+
+			span{
+				right: 0;
+			}
+		}
+
+		&.closed{
+			&.next{
+				right: -120px;
+			}
+
+			&.prev{
+				left: -120px;
+			}
+		}
+	}
+
+	.single-loader{
+		z-index: 1000;
+		width: 0;
+
+		.loader-content{
+			left: 50vw;
+			top: 50vh;
+			z-index: 1005;
+		}
+
+		&:before{
+			width: 100%;
+	    	z-index: 1000;
+	    	background: $galleryTitleBgPw;
+	    	@include transition-delay(0s);
+			@include transition-duration(0.3s);
+			@include transition-timing-function(cubic-bezier(.88,.03,.37,.97));
+		}
+
+		&:after{
+			width: 0;
+	    	z-index: 1001;
+	    	background: $mainloader_background;
+	    	@include transition-delay(0s);
+			@include transition-duration(0.8s);
+			@include transition-timing-function(cubic-bezier(.88,.03,.37,.97));
+		}
+
+		&.open{
+			&:before{
+				width: 100%;
+			}
+			&:after{
+				@include transition-delay(0.2s);
+				width: 100%;
+			}
+		}
+
+		&.close{
+			width: 0;
+
+			&:before{
+		    	width: 100%;
+		    	left: 0;
+			}
+
+			&:after{
+		    	width: 0;
+		    	left: 100%;
+		    	@include transition-delay(0s);
+		    	@include transition-duration(0.8s);
+			}
+		}
+	}
+}

@@ -1,0 +1,207 @@
+@mixin box-border {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+@mixin rel{
+    position: relative;
+    float: left;
+}
+@mixin right{
+    position: relative;
+    float: right;
+}
+@mixin abs{
+    position: absolute;
+}
+
+@mixin no-select{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@mixin resize-sprite($map, $sprite, $percent) {
+    $spritePath:    sprite-path($map);
+    $spriteWidth:   image-width($spritePath);
+    $spriteHeight:  image-height($spritePath);
+    $width: image-width(sprite-file($map, $sprite));
+    $height: image-height(sprite-file($map, $sprite));
+
+    @include background-size(ceil($spriteWidth * ($percent/100)) ceil($spriteHeight * ($percent/100)));
+    width: ceil($width*($percent/100));
+    height: ceil($height*($percent/100));
+    background-position: 0 floor(nth(sprite-position($map, $sprite), 2)  * ($percent/100) );
+}
+
+@mixin resize-sprite-set($map, $percent, $only...) {
+    $name: sprite_map_name($map);
+
+    @each $sprite in sprite_names($map) {
+        @if length($only) == 0 or index($only, $sprite) != false {
+            .#{$name}-#{$sprite} {
+                @include resize-sprite($map, $sprite, $percent);
+            }
+        }
+    }
+}
+
+@mixin backgroundAlpha($color) {
+    background-color: rgba($color, 1);
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;	
+}
+
+@mixin text-ellipsis{
+	overflow:hidden;	
+	word-break:break-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin disable-ap {
+    border: none;
+    outline: none;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+@mixin no-margin{
+	margin:0;
+	padding:0;
+}
+
+@mixin disable-list {
+	position:relative;
+	list-style:none;
+    border: none;
+    outline: none;
+	float:left;
+	border:none;
+}
+
+@mixin content-container{
+ 	position: relative;
+    float: left;
+    width: 100%;
+	height: 100%;
+    min-width: 1000px;
+    min-height: 700px;
+}
+
+@mixin disable-selection{
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+@mixin fontLight{
+    font-family: 'Raleway light', Arial, sans-serif;
+}
+@mixin fontText{
+    font-family: 'Raleway', Arial, sans-serif;
+}
+@mixin fontBold{
+    font-family: 'Raleway bold', Arial, sans-serif;
+}
+
+@mixin fontEspecial{
+    font-family: 'poiret_oneregular';
+}
+
+$easefunctions: (
+  in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530),
+  in-cubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190),
+  in-quart:     cubic-bezier(0.895,  0.030, 0.685, 0.220),
+  in-quint:     cubic-bezier(0.755,  0.050, 0.855, 0.060),
+  in-sine:      cubic-bezier(0.470,  0.000, 0.745, 0.715),
+  in-expo:      cubic-bezier(0.950,  0.050, 0.795, 0.035),
+  in-circ:      cubic-bezier(0.600,  0.040, 0.980, 0.335),
+  in-back:      cubic-bezier(0.600, -0.280, 0.735, 0.045),
+  out-quad:     cubic-bezier(0.250,  0.460, 0.450, 0.940),
+  out-cubic:    cubic-bezier(0.215,  0.610, 0.355, 1.000),
+  out-quart:    cubic-bezier(0.165,  0.840, 0.440, 1.000),
+  out-quint:    cubic-bezier(0.230,  1.000, 0.320, 1.000),
+  out-sine:     cubic-bezier(0.390,  0.575, 0.565, 1.000),
+  out-expo:     cubic-bezier(0.190,  1.000, 0.220, 1.000),
+  out-circ:     cubic-bezier(0.075,  0.820, 0.165, 1.000),
+  out-back:     cubic-bezier(0.175,  0.885, 0.320, 1.275),
+  in-out-quad:  cubic-bezier(0.455,  0.030, 0.515, 0.955),
+  in-out-cubic: cubic-bezier(0.645,  0.045, 0.355, 1.000),
+  in-out-quart: cubic-bezier(0.770,  0.000, 0.175, 1.000),
+  in-out-quint: cubic-bezier(0.860,  0.000, 0.070, 1.000),
+  in-out-sine:  cubic-bezier(0.445,  0.050, 0.550, 0.950),
+  in-out-expo:  cubic-bezier(1.000,  0.000, 0.000, 1.000),
+  in-out-circ:  cubic-bezier(0.785,  0.135, 0.150, 0.860),
+  in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550)
+);
+
+@function ease($key) {
+  @if map-has-key($easefunctions, $key) {
+    @return map-get($easefunctions, $key);
+  }
+
+  @warn "Unkown '#{$key}' in $easefunctions.";
+  @return null;
+}
+
+/*
+  (TEXT) PARAMS
+  =================
+  1. Namespace
+  2. Intensity
+  3. Text color
+  4. Background color (flat)
+  5. Highlight #1 color
+  6. Highlight #2 color
+  7. Width (px)
+  8. Height (px)
+*/
+@mixin textGlitch($name, $intensity, $textColor, $background, $highlightColor1, $highlightColor2, $width, $height) 
+{
+    color: $textColor;
+    $steps: $intensity;
+
+    @at-root {
+        @for $i from 1 through 2 {
+            @keyframes #{$name}-anim-#{$i} {
+                @for $i from 0 through $steps {
+                    #{percentage($i*(1/$steps))} {
+                        clip: rect(random($height)+px,$width+px,random($height)+px,0);
+                    }
+                }
+            }
+        }
+    }
+
+    &:before, &:after {
+        content: attr(data-text);
+        position: absolute;
+        white-space: nowrap;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: $background;
+        clip: rect(0, 0, 0, 0); 
+    }
+
+    &:after {
+        left: 2px;
+        text-shadow: -1px 0 $highlightColor1;
+        animation: #{$name}-anim-1 2s infinite linear alternate-reverse;
+    }
+
+    &:before {
+        left: -2px;
+        text-shadow: 2px 0 $highlightColor2; 
+        animation: #{$name}-anim-2 3s infinite linear alternate-reverse;
+    }
+}

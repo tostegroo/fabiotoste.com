@@ -1,0 +1,16 @@
+#ErrorDocument 404 /error/404
+#ErrorDocument 403 /error/404
+#ErrorDocument 400 /error/404
+#ErrorDocument 500 /error/404
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /blog/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /blog/index.php [L]
+</IfModule>
+
+# END WordPress

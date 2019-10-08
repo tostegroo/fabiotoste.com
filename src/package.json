@@ -1,0 +1,20 @@
+{
+  "name": "fabiotoste",
+  "version": "1.0.0",
+  "description": "fabiotoste.com web site",
+  "main": "Gruntfile.js",
+  "scripts": {"test": "echo \"Error: no test specified\" && exit 1"},
+  "author": "Fabio Toste",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "1.18.2",
+    "jquery": "2.2.1"
+  },
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-concat": "0.5.0",
+    "grunt-contrib-compass": "1.1.0",
+    "grunt-contrib-uglify": "0.11.1",
+    "grunt-contrib-watch": "0.6.1"
+  }
+}
